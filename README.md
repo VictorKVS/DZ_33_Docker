@@ -73,8 +73,22 @@ DZ_33_Docker/
 ├── requirements.txt    # Зависимости Python
 └── README.md           # Этот файл
 ```
+
 ---
-1. Архитектура контейнеризации
+
+## 📸 Демонстрация работы
+
+### 1. Статус контейнера (`docker ps -a`)
+![Docker PS](docs/screenshots/01_docker_ps.png)  
+*Контейнер успешно запущен и работает в фоновом режиме (статус Up).*
+
+### 2. Работающее Django-приложение
+![App Running](docs/screenshots/02_app_running.png)  
+*Веб-приложение Django успешно отвечает на запросы через проброшенный порт 8000.*
+
+---
+
+## 1. Архитектура контейнеризации
 
 ``` mermaid
 
@@ -101,8 +115,8 @@ graph TB
     style Container fill:#fff3e0,stroke:#e65100,stroke-width:2px
     style Docker fill:#0277bd,stroke:#01579b,stroke-width:2px,color:#fff
 ```
+## 2.
 
-2. Поток сборки и запуска контейнера
 ``` mermaid
 
 sequenceDiagram
@@ -126,7 +140,9 @@ sequenceDiagram
     Container->>Container: python manage.py runserver
     Container-->>Dev: Контейнер работает 🚀
 ```
-3. Структура Dockerfile (пошагово)
+
+## 3. Структура Dockerfile (пошагово)
+
 ``` mermaid
 flowchart LR
     A["FROM<br/>python:3.10-slim"] --> B["ENV<br/>PYTHONDONTWRITEBYTECODE=1<br/>PYTHONUNBUFFERED=1"]
@@ -147,7 +163,7 @@ flowchart LR
     style H fill:#795548,stroke:#4E342E,stroke-width:2px,color:#fff
 ```
 
-4. Сравнение: Без Docker vs С Docker
+## 4. Сравнение: Без Docker vs С Docker
 
 ``` mermaid
 
@@ -170,7 +186,7 @@ graph LR
     style WithoutDocker fill:#ffebee,stroke:#c62828,stroke-width:2px
     style WithDocker fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
 ```
-5. Жизненный цикл контейнера
+## 5. Жизненный цикл контейнера
 ``` mermaid
 stateDiagram-v2
     [*] --> ImageBuild: docker build

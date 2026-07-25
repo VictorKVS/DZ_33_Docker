@@ -17,9 +17,9 @@ Including another URLconf
 # myproject/urls.py
 from django.contrib import admin
 from django.urls import path
-from . import views  # <-- Импортируем наш новый views
+from . import views  # <-- ЭТА СТРОКА ОБЯЗАТЕЛЬНА
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),  # <-- Добавляем главную страницу
+    path('', views.home, name='home'),  # <-- И ЭТА ТОЖЕ
 ]
