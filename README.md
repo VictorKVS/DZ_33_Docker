@@ -226,46 +226,14 @@ graph TB
  ```
  ---
 
-##  2. Поток сборки и запуска
+## 2. Модель данных (ER-диаграмма)
 
+Схемы баз данных (SQLAlchemy модели) находятся в файле `models.py`:
+- **User** - таблица пользователей
+- **Product** - таблица товаров
+- **Order** - таблица заказов
 
-```-mermaid
-
-
-🗄️ Базы данных схемы (SQLAlchemy модели):
-Находятся в файле models.py:
-User - таблица пользователей
-Product - таблица товаров
-Order - таблица заказов
-```
-``` mermaid
-  erDiagram
-    USERS ||--o{ ORDERS : places
-    PRODUCTS ||--o{ ORDERS : contains
-    
-    USERS {
-        int id PK
-        string username UK
-        string email UK
-        string hashed_password
-        boolean is_admin
-    }
-    
-    PRODUCTS {
-        int id PK
-        string name
-        string description
-        float price
-        string image_url
-    }
-    
-    ORDERS {
-        int id PK
-        int user_id FK
-        int product_id FK
-        int quantity
-        string status
-    }
+```mermaid
 erDiagram
     USERS ||--o{ ORDERS : places
     PRODUCTS ||--o{ ORDERS : contains
@@ -293,8 +261,6 @@ erDiagram
         int quantity
         string status
     }
-```
-
 
 
 ## 🔍 Анализ Dockerfile
