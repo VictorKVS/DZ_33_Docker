@@ -43,21 +43,6 @@ docker run -d -p 8000:8000 --name dz33_container dz33-django-app
 docker stop dz33_container
 docker rm dz33_container
 ``` 
-
----
-
-## 📸 Демонстрация работы
-
-### 1. Статус контейнера (docker ps -a)
-![Docker PS](docs/screenshots/01_docker_ps.png)
-*Контейнер успешно запущен и работает в фоновом режиме (статус Up).*
-
-### 2. Работающее Django-приложение
-![App Running](docs/screenshots/02_app_running.png)
-*Веб-приложение Django успешно отвечает на запросы через проброшенный порт 8000.*
-
----
-
 ## 📂 Структура проекта
 
 ``` text
