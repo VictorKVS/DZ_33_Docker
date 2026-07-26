@@ -261,7 +261,7 @@ erDiagram
         int quantity
         string status
     }
-
+```
 
 ## 🔍 Анализ Dockerfile
 
